@@ -8,13 +8,13 @@ import os
 
 load_dotenv()
 
-# ── Setup ──
+# ── defining the model──
 client = ChatGoogleGenerativeAI(
     model="gemini-3.6-flash",
     google_api_key=os.getenv("GOOGLE_API_KEY"),
-    temperature=0,
-)
 
+)
+#  ----calling the agent-----
 search_agent = create_agent(
     model=client,
     tools=[get_transcript, summarize_video],
